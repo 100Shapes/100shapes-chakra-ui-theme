@@ -18,6 +18,7 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, AddIcon } from "@chakra-ui/icons";
 import { ColorModeSwitch } from "../ColorModeSwitch";
+import { Logomark } from "../Logomark";
 
 const Links = ["Dashboard", "Projects", "Team"];
 
@@ -53,7 +54,9 @@ export const Header: React.FC = () => {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={"center"}>
-            <Box>Logo</Box>
+            <Box>
+              <Logomark color="blue" w={8} h={8} />
+            </Box>
             <HStack
               as={"nav"}
               spacing={4}
@@ -66,8 +69,8 @@ export const Header: React.FC = () => {
           </HStack>
           <Flex alignItems={"center"}>
             <Button
-              variant={"solid"}
-              colorScheme={"teal"}
+              variant="outline"
+              colorScheme={"blue"}
               size={"sm"}
               mr={4}
               leftIcon={<AddIcon />}
