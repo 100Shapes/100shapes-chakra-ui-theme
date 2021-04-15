@@ -4,7 +4,7 @@ import { ComponentStyleConfig } from "@chakra-ui/react";
 export const Button: ComponentStyleConfig = {
   baseStyle: {
     borderRadius: "full",
-    fontWeight: "semibold",
+    fontWeight: "400",
   },
   sizes: {
     ...buttonBase.sizes,
@@ -12,6 +12,7 @@ export const Button: ComponentStyleConfig = {
   variants: {
     ghost: ({ colorMode }) => ({
       color: colorMode === "light" ? `blue.500` : "grey.50",
+      fontWeight: "500",
       _hover: {
         bg: colorMode === "light" ? `pink.50` : "pink.100",
         borderColor: colorMode === "light" ? `blue.400` : "pink.100",
@@ -25,6 +26,7 @@ export const Button: ComponentStyleConfig = {
       border: "2px solid",
       borderColor: colorMode === "light" ? `blue.500` : "grey.50",
       color: colorMode === "light" ? `blue.500` : "grey.50",
+      fontWeight: "500",
       _hover: {
         bg: colorMode === "light" ? `blue.400` : "pink.100",
         borderColor: colorMode === "light" ? `blue.400` : "pink.100",

@@ -10,6 +10,7 @@ import {
   Menu,
   MenuButton,
   MenuList,
+  useColorMode,
   MenuItem,
   MenuDivider,
   useDisclosure,
@@ -31,12 +32,14 @@ export type HeaderProps = {};
 
 export const Header: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { colorMode } = useColorMode();
 
   return (
     <>
       <Box px={4}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
+            variant="ghost"
             size={"md"}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
             aria-label={"Open Menu"}
@@ -45,7 +48,11 @@ export const Header: React.FC = () => {
           />
           <HStack spacing={3} alignItems={"center"}>
             <Box>
-              <Logomark color="blue" w={8} h={8} />
+              <Logomark
+                color={colorMode === "light" ? "blue" : "pink"}
+                w={8}
+                h={8}
+              />
             </Box>
             <HStack
               as={"nav"}

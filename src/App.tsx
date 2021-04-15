@@ -22,10 +22,16 @@ export const App = () => (
         Edit <Code fontSize="xl">src/App.tsx</Code> and save to reload.
       </Text>
       <hr />
-      <Heading as="h2" fontSize="xx-large">
-        Buttons
-      </Heading>
+
       <VStack spacing={4}>
+        <Heading
+          fontWeight="600"
+          fontFamily="heading"
+          as="h2"
+          fontSize="xx-large"
+        >
+          Buttons
+        </Heading>
         <HStack spacing={4}>
           <Button size="lg" variant="ghost">
             Learn Chakra
