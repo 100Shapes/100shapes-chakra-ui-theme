@@ -13,7 +13,6 @@ import {
   MenuItem,
   MenuDivider,
   useDisclosure,
-  useColorModeValue,
   Stack,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, AddIcon } from "@chakra-ui/icons";
@@ -23,18 +22,9 @@ import { Logomark } from "../Logomark";
 const Links = ["Dashboard", "Projects", "Team"];
 
 const NavLink: React.FC = ({ children }) => (
-  <Link
-    px={2}
-    py={1}
-    rounded={"md"}
-    _hover={{
-      textDecoration: "none",
-      bg: useColorModeValue("gray.200", "gray.700"),
-    }}
-    href={"#"}
-  >
+  <Button variant="ghost" size="sm" as={Link} href={"#"}>
     {children}
-  </Link>
+  </Button>
 );
 
 export type HeaderProps = {};
@@ -44,7 +34,7 @@ export const Header: React.FC = () => {
 
   return (
     <>
-      <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
+      <Box px={4}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
             size={"md"}
@@ -53,13 +43,13 @@ export const Header: React.FC = () => {
             display={{ md: !isOpen ? "none" : "inherit" }}
             onClick={isOpen ? onClose : onOpen}
           />
-          <HStack spacing={8} alignItems={"center"}>
+          <HStack spacing={3} alignItems={"center"}>
             <Box>
               <Logomark color="blue" w={8} h={8} />
             </Box>
             <HStack
               as={"nav"}
-              spacing={4}
+              spacing={2}
               display={{ base: "none", md: "flex" }}
             >
               {Links.map((link) => (
@@ -68,18 +58,15 @@ export const Header: React.FC = () => {
             </HStack>
           </HStack>
           <Flex alignItems={"center"}>
-            <Button
-              variant="outline"
-              colorScheme={"blue"}
-              size={"sm"}
-              mr={4}
-              leftIcon={<AddIcon />}
-            >
+            <Button variant="outline" size={"sm"} mr={4} leftIcon={<AddIcon />}>
               Action
             </Button>
             <Menu>
               <MenuButton
                 as={Button}
+                size="sm"
+                height={16}
+                width={16}
                 rounded={"full"}
                 variant={"link"}
                 cursor={"pointer"}
