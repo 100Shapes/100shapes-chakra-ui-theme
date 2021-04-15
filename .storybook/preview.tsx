@@ -1,7 +1,7 @@
 import * as React from "react";
 import { ChakraProvider } from "@chakra-ui/react";
 import { addDecorator } from "@storybook/react";
-import theme from "../src/theme";
+// import theme from "../src/theme";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -13,6 +13,4 @@ export const parameters = {
   },
 };
 
-addDecorator((story) => (
-  <ChakraProvider theme={theme}>{story()}</ChakraProvider>
-));
+addDecorator((story) => <ChakraProvider>{story()}</ChakraProvider>);
