@@ -1,3 +1,4 @@
+import buttonBase from "@chakra-ui/theme/dist/cjs/components/button";
 import { ComponentStyleConfig } from "@chakra-ui/react";
 
 export const Button: ComponentStyleConfig = {
@@ -6,21 +7,7 @@ export const Button: ComponentStyleConfig = {
     fontWeight: "semibold",
   },
   sizes: {
-    sm: {
-      fontSize: "sm",
-      px: 4,
-      py: 1,
-    },
-    md: {
-      fontSize: "md",
-      px: 5,
-      py: 2,
-    },
-    lg: {
-      fontSize: "lg",
-      px: 6,
-      py: 3,
-    },
+    ...buttonBase.sizes,
   },
   variants: {
     ghost: ({ colorMode }) => ({
@@ -59,6 +46,7 @@ export const Button: ComponentStyleConfig = {
     }),
   },
   defaultProps: {
+    ...buttonBase.defaultProps,
     colorScheme: "blue",
     size: "md",
     variant: "solid",
