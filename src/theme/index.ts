@@ -1,11 +1,8 @@
 import { extendTheme } from "@chakra-ui/react";
+import colors from "./palette";
 
 const theme = extendTheme({
-  // colors: {
-  //   brand: {
-  //     blue: "#1140E6",
-  //   },
-  // },
+  colors,
 });
 
 export default theme;

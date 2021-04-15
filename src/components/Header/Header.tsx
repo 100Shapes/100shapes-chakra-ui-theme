@@ -17,6 +17,7 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, AddIcon } from "@chakra-ui/icons";
+import { ColorModeSwitch } from "../ColorModeSwitch";
 
 const Links = ["Dashboard", "Projects", "Team"];
 
@@ -93,6 +94,7 @@ export const Header: React.FC = () => {
                 <MenuDivider />
                 <MenuItem>Link 3</MenuItem>
               </MenuList>
+              <ColorModeSwitch />
             </Menu>
           </Flex>
         </Flex>
