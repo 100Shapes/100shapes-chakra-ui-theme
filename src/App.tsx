@@ -24,12 +24,10 @@ export const App = () => (
       <hr />
 
       <VStack spacing={4}>
-        <Heading
-          fontWeight="600"
-          fontFamily="heading"
-          as="h2"
-          fontSize="xx-large"
-        >
+        <Heading letterSpacing="widest" as="h1">
+          Buttons
+        </Heading>
+        <Heading as="h2" fontSize="xxx-large">
           Buttons
         </Heading>
         <HStack spacing={4}>

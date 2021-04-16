@@ -1,7 +1,7 @@
 import { extendTheme } from "@chakra-ui/react";
 import colors from "./palette";
 import fonts from "./fonts";
-import myGlobal from "./global";
+import createGlobals from "./global";
 import * as components from "./components";
 
 const theme = extendTheme({
@@ -9,7 +9,7 @@ const theme = extendTheme({
   components,
   fonts,
   styles: {
-    global: myGlobal,
+    global: (props) => createGlobals(props),
   },
 });
 

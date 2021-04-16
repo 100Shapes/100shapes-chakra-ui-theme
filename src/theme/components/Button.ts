@@ -46,7 +46,6 @@ const overrides: ComponentStyleConfig = {
     }),
   },
   defaultProps: {
-    ...buttonBase.defaultProps,
     colorScheme: "blue",
     size: "md",
     variant: "solid",
