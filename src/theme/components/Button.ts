@@ -1,13 +1,11 @@
+import { mergeWith as merge } from "@chakra-ui/utils";
 import buttonBase from "@chakra-ui/theme/dist/cjs/components/button";
 import { ComponentStyleConfig } from "@chakra-ui/react";
 
-export const Button: ComponentStyleConfig = {
+const overrides: ComponentStyleConfig = {
   baseStyle: {
     borderRadius: "full",
     fontWeight: "400",
-  },
-  sizes: {
-    ...buttonBase.sizes,
   },
   variants: {
     ghost: ({ colorMode }) => ({
@@ -54,3 +52,5 @@ export const Button: ComponentStyleConfig = {
     variant: "solid",
   },
 };
+
+export const Button = merge(buttonBase, overrides);
