@@ -2,7 +2,6 @@ import React from "react";
 import {
   Box,
   Flex,
-  Avatar,
   HStack,
   Link,
   IconButton,
@@ -16,7 +15,12 @@ import {
   useDisclosure,
   Stack,
 } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon, AddIcon } from "@chakra-ui/icons";
+import {
+  HamburgerIcon,
+  CloseIcon,
+  AddIcon,
+  ChevronDownIcon,
+} from "@chakra-ui/icons";
 import { ColorModeSwitch } from "../ColorModeSwitch";
 import { Logomark } from "../Logomark";
 
@@ -66,24 +70,16 @@ export const Header: React.FC = () => {
           </HStack>
           <Flex alignItems={"center"}>
             <Button variant="outline" size={"sm"} mr={4} leftIcon={<AddIcon />}>
-              Action
+              Add Project
             </Button>
             <Menu>
               <MenuButton
                 as={Button}
+                variant="ghost"
                 size="sm"
-                height={16}
-                width={16}
-                rounded={"full"}
-                variant={"link"}
-                cursor={"pointer"}
+                rightIcon={<ChevronDownIcon />}
               >
-                <Avatar
-                  size={"sm"}
-                  src={
-                    "https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9"
-                  }
-                />
+                Me
               </MenuButton>
               <MenuList>
                 <MenuItem>Link 1</MenuItem>
